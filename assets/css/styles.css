@@ -21,7 +21,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 120px;
 }
 
 body {
@@ -136,12 +136,10 @@ button.button {
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(255, 255, 255, 0.93);
+  position: relative;
+  background: #ffffff;
   border-bottom: 1px solid rgba(231, 237, 241, 0.9);
-  backdrop-filter: blur(18px);
+  box-shadow: 0 1px 0 rgba(231, 237, 241, 0.9);
 }
 
 .navbar {
@@ -520,6 +518,9 @@ button.button {
 
 .location-section {
   background: linear-gradient(180deg, #fff, #f8fafb);
+  scroll-margin-top: 120px;
+  padding-top: 150px;
+  margin-top: 32px;
 }
 
 .location-grid {
