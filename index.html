@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Odontolog Villa Luro</title>
+  <meta
+    name="description"
+    content="Odontolog Villa Luro. Atención integral, tratamientos modernos y urgencias con el Dr. Guido Santagada en Villa Luro, CABA."
+  >
+  <meta name="theme-color" content="#17aeb9">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/img/cropped-Isotipo.png">
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  >
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <header class="site-header" id="inicio">
+    <div class="container navbar">
+      <a href="#inicio" class="brand" aria-label="Ir al inicio">
+        <span class="brand-icon">
+          <img src="assets/img/cropped-Isotipo.png" alt="" aria-hidden="true">
+        </span>
+        <span class="brand-text">
+          <strong>Odontolog Villa Luro</strong>
+          <small>DR. GUIDO SANTAGADA</small>
+        </span>
+      </a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-menu">
+        <span class="sr-only">Abrir menú</span>
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="main-menu" id="main-menu" aria-label="Navegación principal">
+        <a href="#inicio" class="active">Inicio</a>
+        <a href="#tratamientos">Tratamientos</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#consultorio">El consultorio</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <button type="button" class="button button-primary header-cta" data-modal-open="turno">
+        <i class="fa-regular fa-calendar"></i>
+        Solicitar turno
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-copy reveal">
+          <span class="section-label">Odontología integral</span>
+
+          <h1>
+            Odontólogo<br>
+            <span>Guido Santagada</span>
+          </h1>
+
+          <p>
+            Atención personalizada para toda la familia, con diagnóstico preciso,
+            tratamientos modernos y un trato cercano en cada consulta.
+          </p>
+
+          <div class="hero-actions">
+            <button type="button" class="button button-primary" data-modal-open="urgencias">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              Urgencias
+            </button>
+
+            <button type="button" class="button button-outline" data-modal-open="consulta">
+              <i class="fa-regular fa-calendar"></i>
+              Consulta
+            </button>
+          </div>
+
+          <div class="hero-features">
+            <div class="feature-item">
+              <i class="fa-solid fa-user-doctor"></i>
+              <span>Atención<br>personalizada</span>
+            </div>
+
+            <div class="feature-item">
+              <i class="fa-solid fa-tooth"></i>
+              <span>Tratamientos<br>integrales</span>
+            </div>
+
+            <div class="feature-item">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>Turnos<br>rápidos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="treatments section" id="tratamientos">
+      <div class="container">
+        <header class="section-heading reveal">
+          <span class="section-label">Tratamientos</span>
+          <h2>Especialidades y cuidados para tu salud bucal</h2>
+        </header>
+
+        <div class="treatment-grid">
+          <article class="treatment-card reveal">
+            <i class="fa-solid fa-tooth"></i>
+            <h3>Odontología general</h3>
+          </article>
+
+          <article class="treatment-card reveal">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <h3>Ortodoncia</h3>
+          </article>
+
+          <article class="treatment-card reveal">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <h3>Prótesis dentales</h3>
+          </article>
+
+          <article class="treatment-card reveal">
+            <i class="fa-solid fa-grip-lines"></i>
+            <h3>Periodoncia</h3>
+          </article>
+
+          <article class="treatment-card reveal">
+            <i class="fa-regular fa-face-smile-beam"></i>
+            <h3>Endodoncia</h3>
+          </article>
+
+          <article class="treatment-card reveal">
+            <i class="fa-solid fa-shield-heart"></i>
+            <h3>Urgencias</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section" id="sobre-mi">
+      <div class="container about-grid">
+        <figure class="doctor-photo reveal">
+          <img
+            src="assets/img/Dr_02.png"
+            alt="Consultorio odontológico de Guido Santagada"
+            loading="lazy"
+          >
+        </figure>
+
+        <div class="about-copy reveal">
+          <span class="section-label">Sobre mí</span>
+
+          <h2>
+            Dr. Guido<br>
+            <span>Santagada</span>
+          </h2>
+
+          <p>
+            Brindamos una atención integral de calidad y accesible, con foco en el
+            diagnóstico preciso, la seguridad y una experiencia cómoda para cada paciente.
+          </p>
+
+          <div class="about-badges">
+            <div class="info-badge">
+              <i class="fa-regular fa-user"></i>
+              <span>Atención<br>cercana y profesional</span>
+            </div>
+
+            <div class="info-badge">
+              <i class="fa-solid fa-award"></i>
+              <span>Especialista en<br>odontología integral</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reasons reveal">
+          <span class="section-label">¿Por qué elegirnos?</span>
+          <h2>Cuidado, confianza y resultados</h2>
+
+          <ul>
+            <li><i class="fa-regular fa-circle-check"></i> Atención personalizada y trato humano.</li>
+            <li><i class="fa-regular fa-circle-check"></i> Diagnóstico preciso y tratamientos efectivos.</li>
+            <li><i class="fa-regular fa-circle-check"></i> Soluciones integrales para toda la familia.</li>
+            <li><i class="fa-regular fa-circle-check"></i> Urgencias y seguimiento cercano.</li>
+            <li><i class="fa-regular fa-circle-check"></i> Consultorio pensado para tu comodidad.</li>
+          </ul>
+
+          <button type="button" class="button button-primary" data-modal-open="turno">
+            Solicitá tu turno
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="clinic section" id="consultorio">
+      <div class="container">
+        <header class="section-heading reveal">
+          <span class="section-label">El consultorio</span>
+          <h2>Un espacio cómodo, moderno y accesible</h2>
+        </header>
+
+        <div class="gallery">
+          <figure class="gallery-item gallery-item-chair reveal">
+            <img src="assets/img/02.jpeg" alt="Sillas de la sala de espera" loading="lazy">
+          </figure>
+
+          <figure class="gallery-item gallery-item-waiting reveal">
+            <img src="assets/img/04.jpeg" alt="Sala de espera y sector de recepción" loading="lazy">
+          </figure>
+
+          <figure class="gallery-item gallery-item-treatment reveal">
+            <img src="assets/img/10.jpeg" alt="Sala de atención odontológica" loading="lazy">
+          </figure>
+
+          <figure class="gallery-item gallery-item-desk reveal">
+            <img src="assets/img/09.jpeg" alt="Área de trabajo del consultorio" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section location-section" id="ubicacion">
+      <div class="container location-grid">
+        <div class="location-copy reveal">
+          <span class="section-label">Ubicación</span>
+          <h2>Av. Rivadavia 9655, Villa Luro, CABA</h2>
+          <p>
+            Encontranos en Villa Luro. Podés ver el mapa abajo y escribir desde dónde salís
+            para abrir la ruta directamente en tu navegador.
+          </p>
+
+          <div class="route-panel">
+            <label class="field">
+              <span>Punto de partida</span>
+              <input
+                id="route-origin"
+                type="text"
+                placeholder="Ej. Plaza Flores, CABA"
+                autocomplete="street-address"
+              >
+            </label>
+
+            <div class="route-actions">
+              <button type="button" class="button button-primary" id="route-button">
+                <i class="fa-solid fa-route"></i>
+                Cómo llegar
+              </button>
+
+              <button type="button" class="button button-outline" id="use-location-button">
+                <i class="fa-solid fa-location-crosshairs"></i>
+                Usar mi ubicación
+              </button>
+            </div>
+
+            <p class="route-status" id="route-status" aria-live="polite">
+              Ingresá un punto de partida para ver cómo llegar.
+            </p>
+          </div>
+        </div>
+
+        <div class="location-map reveal">
+          <div id="clinic-map" class="clinic-map" aria-label="Mapa de ubicación"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials section" id="opiniones">
+      <div class="container">
+        <header class="section-heading reveal">
+          <span class="section-label">Lo que dicen mis pacientes</span>
+          <h2>Historias reales, sonrisas reales</h2>
+        </header>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card reveal">
+            <span class="quote">“</span>
+            <p>
+              “...Muy buena atención, precios acomodados a la situación actual,
+              excelente profesional y muy recomendable!...”
+            </p>
+            <footer>
+              <strong>Car</strong>
+              <span class="signature">Alexander</span>
+            </footer>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <span class="quote">“</span>
+            <p>
+              “... Muy buena atención, resultados excelentes volví a recuperar mi sonrisa
+              y muy buen precio. Gracias por todo!...”
+            </p>
+            <footer>
+              <strong>Miriam</strong>
+              <span class="signature">Melina</span>
+            </footer>
+          </article>
+        </div>
+
+        <div class="contact-banner reveal nav-observe" id="contacto">
+          <span class="contact-icon">
+            <i class="fa-regular fa-calendar"></i>
+          </span>
+
+          <div class="contact-copy">
+            <h2>¿Listo para cuidar tu sonrisa?</h2>
+            <p>Solicitá tu turno de forma rápida y sencilla.</p>
+          </div>
+
+          <div class="contact-actions">
+            <button type="button" class="button button-primary" data-modal-open="turno">
+              <i class="fa-regular fa-calendar"></i>
+              Solicitar turno
+            </button>
+
+            <a
+              href="https://wa.me/541166573488"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-outline"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <a href="#inicio" class="brand">
+        <span class="brand-icon">
+          <img src="assets/img/cropped-Isotipo.png" alt="" aria-hidden="true">
+        </span>
+        <span class="brand-text">
+          <strong>Odontolog Villa Luro</strong>
+          <small>DR. GUIDO SANTAGADA</small>
+        </span>
+      </a>
+
+      <div class="footer-info">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>
+          Consultorio en Av. Rivadavia 9655<br>
+          Villa Luro, CABA
+        </span>
+      </div>
+
+      <div class="footer-info">
+        <i class="fa-regular fa-clock"></i>
+        <span>
+          Lunes a viernes<br>
+          8:30 a 12:30 - 16:00 a 20:00
+        </span>
+      </div>
+
+      <div class="footer-info">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>
+          WhatsApp<br>
+          11 6657-3488
+        </span>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © 2026 Odontolog Villa Luro. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <a
+    class="whatsapp-floating"
+    href="https://wa.me/541166573488"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Abrir WhatsApp"
+  >
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <div class="modal" id="modal-turno" aria-hidden="true">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-turno-title">
+      <button class="modal-close" type="button" aria-label="Cerrar modal" data-modal-close>
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-header">
+        <span class="section-label">Solicitar turno</span>
+        <h2 id="modal-turno-title">Reservá tu turno</h2>
+        <p>Dejanos tus datos y te contactamos para confirmar día y horario.</p>
+      </div>
+      <form class="modal-form" data-modal-form="turno">
+        <div class="field-grid modal-grid">
+          <label class="field">
+            <span>Nombre *</span>
+            <input type="text" name="nombre" required>
+          </label>
+          <label class="field">
+            <span>Teléfono *</span>
+            <input type="tel" name="telefono" required>
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email">
+          </label>
+          <label class="field">
+            <span>Fecha preferida</span>
+            <input type="date" name="fecha">
+          </label>
+          <label class="field">
+            <span>Horario preferido</span>
+            <input type="time" name="hora">
+          </label>
+          <label class="field">
+            <span>Motivo</span>
+            <input type="text" name="motivo" placeholder="Ej. control, dolor, limpieza">
+          </label>
+        </div>
+        <label class="field field-full">
+          <span>Comentario</span>
+          <textarea name="comentario" rows="5" placeholder="Contanos un poco más"></textarea>
+        </label>
+        <button type="submit" class="button button-primary modal-submit">
+          Enviar solicitud
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-consulta" aria-hidden="true">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-consulta-title">
+      <button class="modal-close" type="button" aria-label="Cerrar modal" data-modal-close>
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-header">
+        <span class="section-label">Consulta</span>
+        <h2 id="modal-consulta-title">Escribinos tu consulta</h2>
+        <p>Te respondemos a la brevedad con la orientación que necesites.</p>
+      </div>
+      <form class="modal-form" data-modal-form="consulta">
+        <div class="field-grid modal-grid">
+          <label class="field">
+            <span>Nombre *</span>
+            <input type="text" name="nombre" required>
+          </label>
+          <label class="field">
+            <span>Email *</span>
+            <input type="email" name="email" required>
+          </label>
+          <label class="field field-full">
+            <span>Asunto *</span>
+            <input type="text" name="asunto" required>
+          </label>
+        </div>
+        <label class="field field-full">
+          <span>Consulta *</span>
+          <textarea name="consulta" rows="6" required></textarea>
+        </label>
+        <button type="submit" class="button button-primary modal-submit">
+          Enviar consulta
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-urgencias" aria-hidden="true">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-dialog modal-dialog-compact" role="dialog" aria-modal="true" aria-labelledby="modal-urgencias-title">
+      <button class="modal-close" type="button" aria-label="Cerrar modal" data-modal-close>
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-header">
+        <span class="section-label">Urgencias</span>
+        <h2 id="modal-urgencias-title">Medios de contacto</h2>
+        <p>Si es una urgencia, comunicate por el medio más rápido.</p>
+      </div>
+      <div class="contact-methods">
+        <a class="contact-method" href="tel:1166573488">
+          <i class="fa-solid fa-phone"></i>
+          <span>
+            <strong>Teléfono</strong>
+            <small>11 6657-3488</small>
+          </span>
+        </a>
+        <a class="contact-method" href="https://wa.me/541166573488" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>
+            <strong>WhatsApp</strong>
+            <small>Respuesta rápida</small>
+          </span>
+        </a>
+        <a class="contact-method" href="mailto:guidosantagada@gmail.com">
+          <i class="fa-regular fa-envelope"></i>
+          <span>
+            <strong>Email</strong>
+            <small>guidosantagada@gmail.com</small>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
