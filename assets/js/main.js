@@ -8,6 +8,7 @@ const routeButton = document.getElementById("route-button");
 const useLocationButton = document.getElementById("use-location-button");
 const routeStatus = document.getElementById("route-status");
 const clinicMapEl = document.getElementById("clinic-map");
+const testimonialsGrid = document.querySelector("[data-testimonials-grid]");
 
 const modalTriggers = [...document.querySelectorAll("[data-modal-open]")];
 const modalForms = [...document.querySelectorAll("[data-modal-form]")];
@@ -214,6 +215,76 @@ function initClinicCarousel() {
   setActive(0);
 }
 
+function buildTestimonialCard(review) {
+  const article = document.createElement("article");
+  article.className = "testimonial-card reveal";
+
+  const quote = document.createElement("span");
+  quote.className = "quote";
+  quote.textContent = "“";
+
+  const quoteText = document.createElement("p");
+  quoteText.textContent = review.text || "";
+
+  const footer = document.createElement("footer");
+
+  const author = document.createElement("strong");
+  author.textContent = review.author || "Paciente";
+
+  const signature = document.createElement("span");
+  signature.className = "signature";
+  signature.textContent = review.signature || "Google";
+
+  footer.append(author, signature);
+  article.append(quote, quoteText, footer);
+
+  return article;
+}
+
+async function initTestimonials() {
+  if (!testimonialsGrid) return;
+
+  const fallbackReviews = [
+    {
+      author: "Car",
+      signature: "Alexander",
+      text: "Muy buena atencion, precios acomodados a la situacion actual, excelente profesional y muy recomendable.",
+    },
+    {
+      author: "Miriam",
+      signature: "Melina",
+      text: "Muy buena atencion, resultados excelentes. Volvi a recuperar mi sonrisa y muy buen precio. Gracias por todo.",
+    },
+    {
+      author: "Paola",
+      signature: "Google",
+      text: "Excelente trato, explican todo con claridad y te hacen sentir comoda desde el primer momento.",
+    },
+  ];
+
+  let reviews = fallbackReviews;
+
+  try {
+    const response = await fetch("assets/data/reviews.json", { cache: "no-store" });
+    if (response.ok) {
+      const data = await response.json();
+      if (Array.isArray(data) && data.length) {
+        reviews = data;
+      }
+    }
+  } catch {
+    reviews = fallbackReviews;
+  }
+
+  testimonialsGrid.replaceChildren(...reviews.map(buildTestimonialCard));
+
+  window.requestAnimationFrame(() => {
+    testimonialsGrid.querySelectorAll(".reveal").forEach((element) => {
+      element.classList.add("is-visible");
+    });
+  });
+}
+
 function getModalByName(name) {
   return document.getElementById(`modal-${name}`);
 }
@@ -416,3 +487,4 @@ if ("IntersectionObserver" in window) {
 
 initClinicCarousel();
 initClinicMap();
+initTestimonials();
