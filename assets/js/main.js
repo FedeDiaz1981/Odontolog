@@ -9,6 +9,8 @@ const useLocationButton = document.getElementById("use-location-button");
 const routeStatus = document.getElementById("route-status");
 const clinicMapEl = document.getElementById("clinic-map");
 const testimonialsGrid = document.querySelector("[data-testimonials-grid]");
+const turnoWhatsappUrl =
+  "https://wa.me/5491166573488?text=Hola%20Odontolog%20Villa%20Luro%2C%20quisiera%20pedir%20un%20turno.%20%C2%BFMe%20pueden%20ayudar%3F";
 
 const modalTriggers = [...document.querySelectorAll("[data-modal-open]")];
 const modalForms = [...document.querySelectorAll("[data-modal-form]")];
@@ -285,6 +287,21 @@ async function initTestimonials() {
   });
 }
 
+function initTurnoCtas() {
+  document.querySelectorAll("[data-turno-cta]").forEach((element) => {
+    if (element instanceof HTMLAnchorElement) {
+      element.href = turnoWhatsappUrl;
+      element.target = "_blank";
+      element.rel = "noopener noreferrer";
+      return;
+    }
+
+    element.addEventListener("click", () => {
+      window.open(turnoWhatsappUrl, "_blank", "noopener,noreferrer");
+    });
+  });
+}
+
 function getModalByName(name) {
   return document.getElementById(`modal-${name}`);
 }
@@ -488,3 +505,4 @@ if ("IntersectionObserver" in window) {
 initClinicCarousel();
 initClinicMap();
 initTestimonials();
+initTurnoCtas();
