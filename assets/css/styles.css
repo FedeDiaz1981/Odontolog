@@ -278,11 +278,13 @@ button.button {
   z-index: 2;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   min-height: inherit;
 }
 
 .hero-copy {
-  width: min(620px, 100%);
+  width: min(560px, 100%);
+  margin-right: auto;
   padding: 72px 0 92px;
   color: #fff;
 }
@@ -413,6 +415,150 @@ button.button {
 .treatment-description,
 .treatment-cta {
   display: none;
+}
+
+@media (min-width: 1101px) {
+  .treatment-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .treatment-card {
+    min-height: 196px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 28px 30px;
+    text-align: left;
+  }
+
+  .treatment-card:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .treatment-card i {
+    flex-shrink: 0;
+    font-size: 40px;
+  }
+
+  .treatment-content {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .treatment-card h3 {
+    font-size: 24px;
+    line-height: 1.12;
+  }
+
+  .treatment-description,
+  .treatment-cta {
+    display: block;
+  }
+
+  .treatment-description {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .treatment-cta {
+    width: fit-content;
+    min-height: 40px;
+    padding: 0 16px;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    box-shadow: 0 10px 20px rgba(23, 174, 185, 0.18);
+  }
+
+  .treatment-card:nth-child(even) .treatment-content {
+    text-align: right;
+    justify-items: end;
+  }
+
+  .clinic.section {
+    padding: 0;
+  }
+
+  .clinic-desktop-only {
+    display: block;
+  }
+
+  .clinic-mobile-only {
+    display: none;
+  }
+
+  .clinic-desktop-only .clinic-carousel {
+    width: 100%;
+    gap: 0;
+  }
+
+  .clinic-desktop-only .carousel-frame {
+    min-height: 620px;
+  }
+
+  .clinic-desktop-only .carousel-viewport {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .clinic-desktop-only .carousel-slide {
+    min-height: 620px;
+  }
+
+  .clinic-desktop-only .carousel-slide::before {
+    background:
+      linear-gradient(90deg, rgba(11, 23, 40, 0.82) 0%, rgba(11, 23, 40, 0.55) 42%, rgba(11, 23, 40, 0.18) 100%),
+      linear-gradient(180deg, rgba(11, 23, 40, 0.14) 0%, rgba(11, 23, 40, 0.34) 100%);
+  }
+
+  .clinic-desktop-only .carousel-copy {
+    width: min(620px, calc(100% - 96px));
+    margin: 0 0 68px 48px;
+    padding: 28px 28px 22px;
+    border-radius: 24px;
+  }
+
+  .clinic-desktop-only .carousel-copy h3 {
+    font-size: clamp(34px, 4vw, 60px);
+    line-height: 0.96;
+  }
+
+  .clinic-desktop-only .carousel-copy p {
+    max-width: 34ch;
+    margin-bottom: 18px;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .clinic-desktop-only .carousel-cta {
+    min-height: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+  }
+
+  .clinic-desktop-only .carousel-nav {
+    width: 56px;
+    height: 56px;
+  }
+
+  .clinic-desktop-only .carousel-prev {
+    left: 20px;
+  }
+
+  .clinic-desktop-only .carousel-next {
+    right: 20px;
+  }
+
+  .clinic-desktop-only .carousel-dots {
+    margin-top: 14px;
+  }
 }
 
 .about {
@@ -663,6 +809,14 @@ button.button {
 .carousel-dot.is-active {
   width: 28px;
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+.clinic-desktop-only {
+  display: none;
+}
+
+.clinic-mobile-only {
+  display: block;
 }
 
 .location-section {

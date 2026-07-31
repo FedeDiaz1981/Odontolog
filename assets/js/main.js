@@ -141,80 +141,82 @@ async function initClinicMap() {
 }
 
 function initClinicCarousel() {
-  const carousel = document.querySelector("[data-clinic-carousel]");
-  if (!carousel) return;
+  const carousels = [...document.querySelectorAll("[data-clinic-carousel]")];
+  if (!carousels.length) return;
 
-  const viewport = carousel.querySelector("[data-carousel-viewport]");
-  const prevButton = carousel.querySelector("[data-carousel-prev]");
-  const nextButton = carousel.querySelector("[data-carousel-next]");
-  const dotsContainer = carousel.querySelector("[data-carousel-dots]");
+  carousels.forEach((carousel) => {
+    const viewport = carousel.querySelector("[data-carousel-viewport]");
+    const prevButton = carousel.querySelector("[data-carousel-prev]");
+    const nextButton = carousel.querySelector("[data-carousel-next]");
+    const dotsContainer = carousel.querySelector("[data-carousel-dots]");
 
-  if (!viewport || !prevButton || !nextButton || !dotsContainer) return;
+    if (!viewport || !prevButton || !nextButton || !dotsContainer) return;
 
-  const slides = [...carousel.querySelectorAll(".carousel-slide")];
-  if (!slides.length) return;
+    const slides = [...carousel.querySelectorAll(".carousel-slide")];
+    if (!slides.length) return;
 
-  let activeIndex = 0;
+    let activeIndex = 0;
 
-  const dots = slides.map((_, index) => {
-    const dot = document.createElement("button");
-    dot.type = "button";
-    dot.className = "carousel-dot";
-    dot.setAttribute("aria-label", `Ver imagen ${index + 1}`);
-    dot.addEventListener("click", () => goTo(index));
-    dotsContainer.appendChild(dot);
-    return dot;
-  });
-
-  function setActive(index) {
-    activeIndex = index;
-    dots.forEach((dot, dotIndex) => {
-      dot.classList.toggle("is-active", dotIndex === index);
+    const dots = slides.map((_, index) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "carousel-dot";
+      dot.setAttribute("aria-label", `Ver imagen ${index + 1}`);
+      dot.addEventListener("click", () => goTo(index));
+      dotsContainer.appendChild(dot);
+      return dot;
     });
-  }
 
-  function goTo(index) {
-    const nextIndex = Math.max(0, Math.min(index, slides.length - 1));
-    slides[nextIndex].scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "start",
-    });
-    setActive(nextIndex);
-  }
-
-  let scrollFrame = 0;
-  function syncFromScroll() {
-    const width = viewport.clientWidth || 1;
-    const index = Math.max(0, Math.min(slides.length - 1, Math.round(viewport.scrollLeft / width)));
-    setActive(index);
-  }
-
-  viewport.addEventListener(
-    "scroll",
-    () => {
-      window.cancelAnimationFrame(scrollFrame);
-      scrollFrame = window.requestAnimationFrame(syncFromScroll);
-    },
-    { passive: true }
-  );
-
-  prevButton.addEventListener("click", () => goTo(activeIndex - 1));
-  nextButton.addEventListener("click", () => goTo(activeIndex + 1));
-
-  viewport.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      goTo(activeIndex - 1);
+    function setActive(index) {
+      activeIndex = index;
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle("is-active", dotIndex === index);
+      });
     }
 
-    if (event.key === "ArrowRight") {
-      event.preventDefault();
-      goTo(activeIndex + 1);
+    function goTo(index) {
+      const nextIndex = Math.max(0, Math.min(index, slides.length - 1));
+      slides[nextIndex].scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "start",
+      });
+      setActive(nextIndex);
     }
-  });
 
-  setActive(0);
+    let scrollFrame = 0;
+    function syncFromScroll() {
+      const width = viewport.clientWidth || 1;
+      const index = Math.max(0, Math.min(slides.length - 1, Math.round(viewport.scrollLeft / width)));
+      setActive(index);
+    }
+
+    viewport.addEventListener(
+      "scroll",
+      () => {
+        window.cancelAnimationFrame(scrollFrame);
+        scrollFrame = window.requestAnimationFrame(syncFromScroll);
+      },
+      { passive: true }
+    );
+
+    prevButton.addEventListener("click", () => goTo(activeIndex - 1));
+    nextButton.addEventListener("click", () => goTo(activeIndex + 1));
+
+    viewport.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        goTo(activeIndex - 1);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        goTo(activeIndex + 1);
+      }
+    });
+
+    setActive(0);
+  });
 }
 
 function buildTestimonialCard(review) {
