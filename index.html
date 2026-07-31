@@ -23,7 +23,7 @@
   >
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260731-1">
 </head>
 
 <body>
@@ -222,25 +222,50 @@
           </article>
         </div>
 
-        <div class="doctor-spotlight reveal" id="sobre-mi">
-          <figure class="doctor-photo doctor-photo-spotlight">
-            <img
-              src="assets/img/Dr_02.png"
-              alt="Dr. Guido Santagada"
-              loading="lazy"
-            >
-          </figure>
+        <div class="doctor-spotlight-wrap" id="sobre-mi">
+        <div class="doctor-spotlight-stack" aria-label="Sobre el doctor">
+            <figure class="doctor-photo-stack">
+              <img
+                src="assets/img/Dr_02.png"
+                alt="Dr. Guido Santagada"
+                loading="lazy"
+              >
+            </figure>
 
-          <div class="doctor-spotlight-copy">
-            <h2>
-              Dr. Guido Santagada
-            </h2>
-            <p class="doctor-spotlight-role">Odontólogo</p>
+            <div class="doctor-spotlight-copy-stack">
+              <h2>
+                <span>Dr.</span>
+                <span>Guido</span>
+                <span>Santagada</span>
+              </h2>
+              <p class="doctor-spotlight-role-stack">Odontólogo</p>
+              <button type="button" class="button button-primary doctor-spotlight-cta-stack" data-turno-cta>
+                Pedir turno
+              </button>
+            </div>
           </div>
 
-          <button type="button" class="button button-primary doctor-spotlight-cta" data-turno-cta>
-            Pedir turno
-          </button>
+          <div class="doctor-spotlight-side" aria-label="Sobre el doctor">
+            <figure class="doctor-photo-side">
+              <img
+                src="assets/img/Dr_02.png"
+                alt="Dr. Guido Santagada"
+                loading="lazy"
+              >
+            </figure>
+
+            <div class="doctor-spotlight-copy-side">
+              <h2>
+                <span>Dr.</span>
+                <span>Guido</span>
+                <span>Santagada</span>
+              </h2>
+              <p class="doctor-spotlight-role-side">Odontólogo</p>
+              <button type="button" class="button button-primary doctor-spotlight-cta-side" data-turno-cta>
+                Pedir turno
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -265,7 +290,7 @@
               aria-label="Galería del consultorio"
             >
               <article class="carousel-slide carousel-slide-1">
-                <img src="assets/img/02.jpeg" alt="Sillas de la sala de espera" loading="lazy">
+                <img src="assets/img/04_desk.png" alt="Sala de espera del consultorio" loading="lazy">
                 <div class="carousel-copy">
                   <span class="carousel-kicker">Recepción</span>
                   <h3>Sala de espera cómoda y luminosa</h3>
@@ -283,7 +308,7 @@
               </article>
 
               <article class="carousel-slide carousel-slide-2">
-                <img src="assets/img/04.jpeg" alt="Sala de espera y sector de recepción" loading="lazy">
+                <img src="assets/img/07_desk.png" alt="Consultorio odontológico" loading="lazy">
                 <div class="carousel-copy">
                   <span class="carousel-kicker">Bienvenida</span>
                   <h3>Un entorno cálido para esperar con calma</h3>
@@ -301,7 +326,7 @@
               </article>
 
               <article class="carousel-slide carousel-slide-3">
-                <img src="assets/img/10.jpeg" alt="Sala de atención odontológica" loading="lazy">
+                <img src="assets/img/10_desk.png" alt="Sala de atención odontológica" loading="lazy">
                 <div class="carousel-copy">
                   <span class="carousel-kicker">Atención</span>
                   <h3>Espacio preparado para tratamientos precisos</h3>
@@ -319,7 +344,7 @@
               </article>
 
               <article class="carousel-slide carousel-slide-4">
-                <img src="assets/img/09.jpeg" alt="Área de trabajo del consultorio" loading="lazy">
+                <img src="assets/img/09_desk.png" alt="Área de trabajo del consultorio" loading="lazy">
                 <div class="carousel-copy">
                   <span class="carousel-kicker">Consultorio</span>
                   <h3>Organización y detalle para cada consulta</h3>
@@ -725,11 +750,6 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
   ></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=20260731-1"></script>
 </body>
 </html>
-
-
-
-
-

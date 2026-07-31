@@ -421,6 +421,7 @@ button.button {
   .treatment-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
+    margin-bottom: 140px;
   }
 
   .treatment-card {
@@ -500,7 +501,8 @@ button.button {
   }
 
   .clinic-desktop-only .carousel-frame {
-    min-height: 620px;
+    height: 630px;
+    min-height: 630px;
   }
 
   .clinic-desktop-only .carousel-viewport {
@@ -509,7 +511,8 @@ button.button {
   }
 
   .clinic-desktop-only .carousel-slide {
-    min-height: 620px;
+    height: 630px;
+    min-height: 630px;
   }
 
   .clinic-desktop-only .carousel-slide::before {
@@ -519,45 +522,59 @@ button.button {
   }
 
   .clinic-desktop-only .carousel-copy {
-    width: min(620px, calc(100% - 96px));
-    margin: 0 0 68px 48px;
-    padding: 28px 28px 22px;
-    border-radius: 24px;
+    position: absolute;
+    inset: 50% auto auto 7vw;
+    transform: translateY(-50%);
+    width: min(520px, calc(100% - 12vw));
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .clinic-desktop-only .carousel-copy h3 {
-    font-size: clamp(34px, 4vw, 60px);
-    line-height: 0.96;
+    margin-bottom: 14px;
+    font-size: clamp(32px, 3.3vw, 54px);
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+    text-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
   }
 
   .clinic-desktop-only .carousel-copy p {
     max-width: 34ch;
     margin-bottom: 18px;
-    font-size: 17px;
-    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.94);
+    font-size: 15px;
+    line-height: 1.55;
+    text-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
   }
 
   .clinic-desktop-only .carousel-cta {
-    min-height: 50px;
-    padding: 0 20px;
-    font-size: 14px;
+    min-height: 44px;
+    padding: 0 18px;
+    font-size: 13px;
+    box-shadow: 0 14px 32px rgba(20, 148, 165, 0.34);
   }
 
   .clinic-desktop-only .carousel-nav {
-    width: 56px;
-    height: 56px;
+    width: 36px;
+    height: 36px;
   }
 
   .clinic-desktop-only .carousel-prev {
-    left: 20px;
+    left: 10px;
   }
 
   .clinic-desktop-only .carousel-next {
-    right: 20px;
+    right: 10px;
   }
 
   .clinic-desktop-only .carousel-dots {
-    margin-top: 14px;
+    margin-top: 6px;
   }
 }
 
@@ -565,53 +582,47 @@ button.button {
   background: #fff;
 }
 
-.doctor-photo {
-  min-height: 450px;
-  justify-self: center;
-  width: 100%;
-  max-width: 295px;
-  overflow: hidden;
-  border-radius: 22px;
-  box-shadow: var(--shadow-md);
-  background: linear-gradient(180deg, rgba(23, 174, 185, 0.08), rgba(255, 255, 255, 0.96));
-  padding: 10px;
-}
-
-.doctor-photo img {
-  height: 100%;
-  min-height: 450px;
-  object-fit: cover;
-  object-position: center 20%;
-  border-radius: 16px;
-}
-
-.doctor-photo-spotlight {
+.doctor-photo-stack {
   grid-area: photo;
   min-height: 0;
+  width: min(100%, 300px);
+  justify-self: center;
   align-self: center;
-  max-width: none;
-  overflow: visible;
   padding: 0;
   background: transparent;
+  border: 0;
   border-radius: 0;
   box-shadow: none;
+  overflow: visible;
 }
 
-.doctor-photo-spotlight img {
+.doctor-photo-stack img {
   min-height: 0;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin-inline: auto;
+  display: block;
   object-position: center center;
   object-fit: contain;
   border-radius: 0;
 }
 
-.doctor-spotlight {
+.doctor-spotlight-wrap {
+  scroll-margin-top: 120px;
+  margin-top: 18px;
+}
+
+.doctor-spotlight-side {
+  display: none;
+}
+
+.doctor-spotlight-stack {
   display: grid;
-  grid-template-columns: minmax(220px, 0.85fr) minmax(0, 1.15fr);
-  grid-template-areas:
-    "photo copy"
-    "button button";
-  align-items: center;
-  gap: 34px;
+  grid-template-columns: minmax(190px, 0.9fr) minmax(0, 1.1fr);
+  grid-template-areas: "photo copy";
+  align-items: start;
+  gap: 16px;
   padding: 0;
   background: transparent;
   border: 0;
@@ -619,37 +630,57 @@ button.button {
   box-shadow: none;
 }
 
-.doctor-spotlight-copy {
+.doctor-spotlight-copy-stack {
   grid-area: copy;
-  display: grid;
-  gap: 10px;
-  justify-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: fit-content;
+  margin-inline: auto;
+  padding-block: 22px;
+  text-align: center;
 }
 
-.doctor-spotlight-copy h2 {
+.doctor-spotlight-copy-stack h2 {
   margin: 0;
-  font-size: clamp(40px, 5vw, 64px);
-  line-height: 0.98;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: clamp(38px, 5.5vw, 72px);
+  line-height: 0.9;
   letter-spacing: -0.05em;
-}
-
-.doctor-spotlight-copy h2 span {
   color: var(--primary);
 }
 
-.doctor-spotlight-role {
-  margin: 0;
-  color: var(--muted);
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.doctor-spotlight-copy-stack h2 span {
+  display: block;
+  width: 100%;
 }
 
-.doctor-spotlight-cta {
-  grid-area: button;
-  width: 100%;
+.doctor-spotlight-role-stack {
+  margin: 0;
+  margin-top: 18px;
+  width: fit-content;
+  display: block;
+  color: var(--primary-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 7px 18px;
+  background: rgba(23, 174, 185, 0.1);
+  border-radius: 999px;
+}
+
+.doctor-spotlight-cta-stack {
+  width: fit-content;
   min-height: 52px;
+  margin-top: 22px;
+  align-self: center;
 }
 
 .clinic-carousel {
@@ -817,6 +848,106 @@ button.button {
 
 .clinic-mobile-only {
   display: block;
+}
+
+@media (min-width: 1101px) {
+  .doctor-spotlight-stack {
+    display: none !important;
+  }
+
+  .doctor-spotlight-side {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "photo copy";
+    align-items: center;
+    justify-items: center;
+    gap: 0;
+    margin-top: 72px;
+  }
+
+  .doctor-photo-side {
+    min-height: 450px;
+    justify-self: center;
+    width: min(100%, 470px);
+    margin-left: 0;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 22px;
+    box-shadow: var(--shadow-md);
+    background: linear-gradient(180deg, rgba(23, 174, 185, 0.08), rgba(255, 255, 255, 0.96));
+  }
+
+  .doctor-photo-side img {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 16px;
+  }
+
+  .doctor-spotlight-copy-side {
+    grid-area: copy;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+    width: min(100%, 240px);
+    margin-inline: auto;
+    justify-self: center;
+    transform: none;
+  }
+
+  .doctor-spotlight-copy-side h2 {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 0.84;
+    letter-spacing: -0.05em;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+
+  .doctor-spotlight-copy-side h2 span {
+    display: block;
+    width: 100%;
+  }
+
+  .doctor-spotlight-role-side {
+    margin: 0 0 8px;
+    width: fit-content;
+    display: block;
+    color: var(--primary-dark);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 7px 18px;
+    background: rgba(23, 174, 185, 0.1);
+    border-radius: 999px;
+  }
+
+  .doctor-spotlight-cta-side {
+    min-height: 60px;
+    min-width: 220px;
+    margin-top: 6px;
+    border-radius: 999px;
+    box-shadow: 0 14px 28px rgba(23, 174, 185, 0.18);
+  }
+
+  .clinic-desktop-only {
+    display: block;
+  }
+
+  .clinic-mobile-only {
+    display: none;
+  }
 }
 
 .location-section {
@@ -1829,111 +1960,6 @@ body.modal-open {
     min-height: 132px;
   }
 
-  .doctor-photo {
-    max-width: 100%;
-    min-height: 0;
-    padding: 8px;
-  }
-
-  .doctor-photo img {
-    min-height: 0;
-    aspect-ratio: 3 / 4;
-  }
-
-  .doctor-photo-spotlight {
-    min-height: 0;
-    max-width: 100%;
-    padding: 0;
-    background: transparent;
-    border-radius: 0;
-    box-shadow: none;
-    width: min(100%, 300px);
-    justify-self: center;
-    margin-left: 16px;
-    align-self: end;
-  }
-
-  .doctor-photo-spotlight img {
-    min-height: 0;
-    width: 104%;
-    max-width: none;
-    aspect-ratio: auto;
-    border-radius: 0;
-  }
-
-  .doctor-spotlight {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "photo"
-      "copy"
-      "button";
-    gap: 10px;
-    align-items: center;
-    padding: 0;
-  }
-
-  .doctor-spotlight-copy {
-    grid-area: copy;
-    justify-items: center;
-    justify-self: stretch;
-    align-self: start;
-    gap: 2px;
-    padding: 12px 16px 10px;
-    margin-top: 0;
-    width: 100%;
-    text-align: center;
-    z-index: 2;
-    background: #fff;
-    border-radius: 0;
-  }
-
-  .doctor-photo-spotlight {
-    grid-area: photo;
-    width: calc(100% + 32px);
-    justify-self: stretch;
-    margin-left: -16px;
-    align-self: start;
-  }
-
-  .doctor-photo-spotlight img {
-    width: 100%;
-  }
-
-  .doctor-spotlight-copy .section-label {
-    display: none;
-  }
-
-  .doctor-spotlight-copy h2 {
-    font-size: clamp(20px, 5.8vw, 31px);
-    line-height: 0.95;
-    letter-spacing: -0.05em;
-    white-space: nowrap;
-  }
-
-  .doctor-spotlight-role {
-    width: 100%;
-    display: block;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-align: center;
-    padding: 6px 10px;
-    margin: 0 auto;
-    background: rgba(23, 174, 185, 0.1);
-    border-radius: 999px;
-    color: var(--primary-dark);
-  }
-
-  .doctor-spotlight-cta {
-    grid-column: auto;
-    justify-self: stretch;
-    width: 100%;
-    min-height: 60px;
-    margin-top: 0;
-    margin-left: 0;
-    border-radius: 0;
-    box-shadow: 0 14px 28px rgba(23, 174, 185, 0.18);
-  }
-
   .gallery {
     grid-template-columns: 1fr;
   }
@@ -2014,13 +2040,22 @@ body.modal-open {
     display: none;
   }
 
+  .doctor-spotlight-stack {
+    grid-template-columns: minmax(170px, 0.86fr) minmax(0, 1.14fr);
+    gap: 12px;
+  }
+
+  .doctor-photo-stack {
+    width: min(100%, 260px);
+  }
+
+  .doctor-photo-stack img {
+    width: 100%;
+  }
+
   .hero-detail-mobile p {
     font-size: 14px;
     line-height: 1.5;
-  }
-
-  .doctor-spotlight-copy h2 {
-    font-size: clamp(30px, 9vw, 40px);
   }
 
   .contact-card,
