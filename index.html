@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -29,13 +29,12 @@
 <body>
   <header class="site-header" id="inicio">
     <div class="container navbar">
-      <a href="#inicio" class="brand" aria-label="Ir al inicio">
+      <a href="#inicio" class="brand header-brand" aria-label="Ir al inicio">
         <span class="brand-icon">
           <img src="assets/img/cropped-Isotipo.png" alt="" aria-hidden="true">
         </span>
         <span class="brand-text">
           <strong>Odontolog Villa Luro</strong>
-          <small>DR. GUIDO SANTAGADA</small>
         </span>
       </a>
 
@@ -71,43 +70,28 @@
             <span>Guido Santagada</span>
           </h1>
 
-          <p>
-            Atención personalizada para toda la familia, con diagnóstico preciso,
-            tratamientos modernos y un trato cercano en cada consulta.
-          </p>
-
           <div class="hero-actions">
-            <button type="button" class="button button-primary" data-modal-open="urgencias">
-              <i class="fa-solid fa-triangle-exclamation"></i>
-              Urgencias
-            </button>
-
-            <button type="button" class="button button-outline" data-modal-open="consulta">
-              <i class="fa-regular fa-calendar"></i>
-              Consulta
-            </button>
-          </div>
-
-          <div class="hero-features">
-            <div class="feature-item">
-              <i class="fa-solid fa-user-doctor"></i>
-              <span>Atención<br>personalizada</span>
-            </div>
-
-            <div class="feature-item">
-              <i class="fa-solid fa-tooth"></i>
-              <span>Tratamientos<br>integrales</span>
-            </div>
-
-            <div class="feature-item">
-              <i class="fa-regular fa-calendar-check"></i>
-              <span>Turnos<br>rápidos</span>
-            </div>
+            <a
+              class="button button-primary"
+              href="https://wa.me/5491166573488?text=Hola%20Odontolog%20Villa%20Luro%2C%20quisiera%20pedir%20un%20turno.%20%C2%BFMe%20pueden%20ayudar%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              Pedir turno por WhatsApp
+            </a>
           </div>
         </div>
       </div>
     </section>
-
+    <div class="hero-detail-mobile">
+      <div class="container">
+        <p>
+          Atención personalizada para toda la familia, con diagnóstico preciso,
+          tratamientos modernos y un trato cercano en cada consulta.
+        </p>
+      </div>
+    </div>
     <section class="treatments section" id="tratamientos">
       <div class="container">
         <header class="section-heading reveal">
@@ -118,87 +102,131 @@
         <div class="treatment-grid">
           <article class="treatment-card reveal">
             <i class="fa-solid fa-tooth"></i>
-            <h3>Odontología general</h3>
+            <div class="treatment-content">
+              <h3>Odontología general</h3>
+              <p class="treatment-description">
+                Controles, limpiezas y tratamientos básicos para cuidar tu boca día a día.
+              </p>
+              <a
+                class="treatment-cta"
+                href="https://wa.me/5491166573488?text=Hola%20Odontolog%20Villa%20Luro%2C%20quiero%20pedir%20turno%20para%20odontolog%C3%ADa%20general."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Pedir turno
+              </a>
+            </div>
           </article>
 
           <article class="treatment-card reveal">
             <i class="fa-solid fa-wand-magic-sparkles"></i>
-            <h3>Ortodoncia</h3>
+            <div class="treatment-content">
+              <h3>Ortodoncia</h3>
+              <p class="treatment-description">
+                Alineamos dientes y mordida para mejorar estética, función y comodidad.
+              </p>
+              <a
+                class="treatment-cta"
+                href="https://wa.me/5491166573488?text=Hola%20Odontolog%20Villa%20Luro%2C%20quiero%20pedir%20turno%20para%20ortodoncia."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Pedir turno
+              </a>
+            </div>
           </article>
 
           <article class="treatment-card reveal">
             <i class="fa-solid fa-screwdriver-wrench"></i>
-            <h3>Prótesis dentales</h3>
+            <div class="treatment-content">
+              <h3>Prótesis dentales</h3>
+              <p class="treatment-description">
+                Reponemos piezas dentales para recuperar estética, mordida y confianza.
+              </p>
+              <a
+                class="treatment-cta"
+                href="https://wa.me/5491166573488?text=Hola%20Odontolog%20Villa%20Luro%2C%20quiero%20pedir%20turno%20para%20pr%C3%B3tesis%20dentales."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Pedir turno
+              </a>
+            </div>
           </article>
 
           <article class="treatment-card reveal">
             <i class="fa-solid fa-grip-lines"></i>
-            <h3>Periodoncia</h3>
+            <div class="treatment-content">
+              <h3>Periodoncia</h3>
+              <p class="treatment-description">
+                Tratamos encías y soporte dental para prevenir molestias y pérdidas.
+              </p>
+              <a
+                class="treatment-cta"
+                href="https://wa.me/5491166573488?text=Hola%20Odontolog%20Villa%20Luro%2C%20quiero%20pedir%20turno%20para%20periodoncia."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Pedir turno
+              </a>
+            </div>
           </article>
 
           <article class="treatment-card reveal">
             <i class="fa-regular fa-face-smile-beam"></i>
-            <h3>Endodoncia</h3>
+            <div class="treatment-content">
+              <h3>Endodoncia</h3>
+              <p class="treatment-description">
+                Aliviamos dolor y salvamos dientes con tratamiento de conductos.
+              </p>
+              <a
+                class="treatment-cta"
+                href="https://wa.me/5491166573488?text=Hola%20Odontolog%20Villa%20Luro%2C%20quiero%20pedir%20turno%20para%20endodoncia."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Pedir turno
+              </a>
+            </div>
           </article>
 
           <article class="treatment-card reveal">
             <i class="fa-solid fa-shield-heart"></i>
-            <h3>Urgencias</h3>
+            <div class="treatment-content">
+              <h3>Urgencias</h3>
+              <p class="treatment-description">
+                Atención rápida para dolor, fracturas, inflamaciones y consultas urgentes.
+              </p>
+              <a
+                class="treatment-cta"
+                href="https://wa.me/5491166573488?text=Hola%20Odontolog%20Villa%20Luro%2C%20tengo%20una%20urgencia%20y%20necesito%20un%20turno."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Pedir turno
+              </a>
+            </div>
           </article>
         </div>
-      </div>
-    </section>
 
-    <section class="about section" id="sobre-mi">
-      <div class="container about-grid">
-        <figure class="doctor-photo reveal">
-          <img
-            src="assets/img/Dr_02.png"
-            alt="Consultorio odontológico de Guido Santagada"
-            loading="lazy"
-          >
-        </figure>
+        <div class="doctor-spotlight reveal" id="sobre-mi">
+          <figure class="doctor-photo doctor-photo-spotlight">
+            <img
+              src="assets/img/Dr_02.png"
+              alt="Dr. Guido Santagada"
+              loading="lazy"
+            >
+          </figure>
 
-        <div class="about-copy reveal">
-          <span class="section-label">Sobre mí</span>
-
-          <h2>
-            Dr. Guido<br>
-            <span>Santagada</span>
-          </h2>
-
-          <p>
-            Brindamos una atención integral de calidad y accesible, con foco en el
-            diagnóstico preciso, la seguridad y una experiencia cómoda para cada paciente.
-          </p>
-
-          <div class="about-badges">
-            <div class="info-badge">
-              <i class="fa-regular fa-user"></i>
-              <span>Atención<br>cercana y profesional</span>
-            </div>
-
-            <div class="info-badge">
-              <i class="fa-solid fa-award"></i>
-              <span>Especialista en<br>odontología integral</span>
-            </div>
+          <div class="doctor-spotlight-copy">
+            <h2>
+              Dr. Guido Santagada
+            </h2>
+            <p class="doctor-spotlight-role">Odontólogo</p>
           </div>
-        </div>
 
-        <div class="reasons reveal">
-          <span class="section-label">¿Por qué elegirnos?</span>
-          <h2>Cuidado, confianza y resultados</h2>
-
-          <ul>
-            <li><i class="fa-regular fa-circle-check"></i> Atención personalizada y trato humano.</li>
-            <li><i class="fa-regular fa-circle-check"></i> Diagnóstico preciso y tratamientos efectivos.</li>
-            <li><i class="fa-regular fa-circle-check"></i> Soluciones integrales para toda la familia.</li>
-            <li><i class="fa-regular fa-circle-check"></i> Urgencias y seguimiento cercano.</li>
-            <li><i class="fa-regular fa-circle-check"></i> Consultorio pensado para tu comodidad.</li>
-          </ul>
-
-          <button type="button" class="button button-primary" data-modal-open="turno">
-            Solicitá tu turno
+          <button type="button" class="button button-primary doctor-spotlight-cta" data-modal-open="turno">
+            Pedir turno
           </button>
         </div>
       </div>
@@ -206,27 +234,103 @@
 
     <section class="clinic section" id="consultorio">
       <div class="container">
-        <header class="section-heading reveal">
-          <span class="section-label">El consultorio</span>
-          <h2>Un espacio cómodo, moderno y accesible</h2>
-        </header>
+        <div class="clinic-carousel reveal" data-clinic-carousel>
+          <div class="carousel-frame">
+            <button
+              type="button"
+              class="carousel-nav carousel-prev"
+              data-carousel-prev
+              aria-label="Ver imagen anterior"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
 
-        <div class="gallery">
-          <figure class="gallery-item gallery-item-chair reveal">
-            <img src="assets/img/02.jpeg" alt="Sillas de la sala de espera" loading="lazy">
-          </figure>
+            <div
+              class="carousel-viewport"
+              data-carousel-viewport
+              tabindex="0"
+              aria-label="Galería del consultorio"
+            >
+              <article class="carousel-slide carousel-slide-1">
+                <img src="assets/img/02.jpeg" alt="Sillas de la sala de espera" loading="lazy">
+                <div class="carousel-copy">
+                  <span class="carousel-kicker">Recepción</span>
+                  <h3>Sala de espera cómoda y luminosa</h3>
+                  <p>Un espacio pensado para que tu visita arranque con tranquilidad.</p>
+                  <a
+                    class="button button-primary carousel-cta"
+                    href="https://wa.me/5491166573488?text=Hola%20Odontolog%20Villa%20Luro%2C%20quiero%20pedir%20turno%20y%20conocer%20el%20consultorio."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Pedir turno
+                  </a>
+                </div>
+              </article>
 
-          <figure class="gallery-item gallery-item-waiting reveal">
-            <img src="assets/img/04.jpeg" alt="Sala de espera y sector de recepción" loading="lazy">
-          </figure>
+              <article class="carousel-slide carousel-slide-2">
+                <img src="assets/img/04.jpeg" alt="Sala de espera y sector de recepción" loading="lazy">
+                <div class="carousel-copy">
+                  <span class="carousel-kicker">Bienvenida</span>
+                  <h3>Un entorno cálido para esperar con calma</h3>
+                  <p>Orden, comodidad y una estética amable en cada rincón.</p>
+                  <a
+                    class="button button-primary carousel-cta"
+                    href="https://wa.me/5491166573488?text=Hola%20Odontolog%20Villa%20Luro%2C%20quiero%20pedir%20un%20turno%20para%20conocer%20el%20consultorio."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Pedir turno
+                  </a>
+                </div>
+              </article>
 
-          <figure class="gallery-item gallery-item-treatment reveal">
-            <img src="assets/img/10.jpeg" alt="Sala de atención odontológica" loading="lazy">
-          </figure>
+              <article class="carousel-slide carousel-slide-3">
+                <img src="assets/img/10.jpeg" alt="Sala de atención odontológica" loading="lazy">
+                <div class="carousel-copy">
+                  <span class="carousel-kicker">Atención</span>
+                  <h3>Espacio preparado para tratamientos precisos</h3>
+                  <p>Equipamiento y entorno limpio para una atención más segura.</p>
+                  <a
+                    class="button button-primary carousel-cta"
+                    href="https://wa.me/5491166573488?text=Hola%20Odontolog%20Villa%20Luro%2C%20quiero%20pedir%20turno%20para%20atenci%C3%B3n%20odontol%C3%B3gica."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Pedir turno
+                  </a>
+                </div>
+              </article>
 
-          <figure class="gallery-item gallery-item-desk reveal">
-            <img src="assets/img/09.jpeg" alt="Área de trabajo del consultorio" loading="lazy">
-          </figure>
+              <article class="carousel-slide carousel-slide-4">
+                <img src="assets/img/09.jpeg" alt="Área de trabajo del consultorio" loading="lazy">
+                <div class="carousel-copy">
+                  <span class="carousel-kicker">Consultorio</span>
+                  <h3>Organización y detalle para cada consulta</h3>
+                  <p>Todo listo para una experiencia ágil, clara y profesional.</p>
+                  <a
+                    class="button button-primary carousel-cta"
+                    href="https://wa.me/5491166573488?text=Hola%20Odontolog%20Villa%20Luro%2C%20quiero%20pedir%20turno%20para%20odontolog%C3%ADa%20integral."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Pedir turno
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <button
+              type="button"
+              class="carousel-nav carousel-next"
+              data-carousel-next
+              aria-label="Ver imagen siguiente"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <div class="carousel-dots" data-carousel-dots aria-label="Selector de imágenes"></div>
         </div>
       </div>
     </section>
@@ -523,3 +627,8 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
