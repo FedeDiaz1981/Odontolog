@@ -1364,6 +1364,59 @@ body.modal-open {
     grid-template-columns: 1fr;
   }
 
+  .location-section {
+    padding-top: 28px;
+    margin-top: 12px;
+  }
+
+  .location-copy,
+  .location-map {
+    padding: 20px 18px;
+    border-radius: 20px;
+  }
+
+  .location-copy h2 {
+    margin-bottom: 10px;
+    font-size: clamp(24px, 6.6vw, 32px);
+  }
+
+  .location-copy p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .route-panel {
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .route-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .route-actions .button {
+    width: 100%;
+    min-height: 46px;
+    padding-inline: 12px;
+    font-size: 13px;
+  }
+
+  .route-actions .button i {
+    margin-right: 6px;
+  }
+
+  .route-status {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .clinic-map,
+  .clinic-map.leaflet-container {
+    min-height: 280px;
+  }
+
   .contact-layout,
   .intro-layout,
   .location-layout {
@@ -1737,6 +1790,29 @@ body.modal-open {
 
   .route-actions .button {
     width: 100%;
+  }
+
+  .location-section {
+    padding-top: 22px;
+    margin-top: 8px;
+  }
+
+  .location-copy,
+  .location-map {
+    padding: 18px 16px;
+  }
+
+  .location-copy h2 {
+    font-size: clamp(22px, 7.2vw, 30px);
+  }
+
+  .route-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .clinic-map,
+  .clinic-map.leaflet-container {
+    min-height: 240px;
   }
 
   .testimonial-grid,
