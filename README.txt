@@ -22,7 +22,7 @@ USO
 3. No requiere npm, compilación ni servidor.
 
 DATOS ACTUALIZADOS
-- Odontolog Villa Luro
+- odontologovillaluro
 - Dr. Guido Santagada
 - WhatsApp: 11 6657-3488
 - Email: guidosantagada@gmail.com

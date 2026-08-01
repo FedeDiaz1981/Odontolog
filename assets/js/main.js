@@ -137,7 +137,7 @@ async function initClinicMap() {
 
   window.L.marker([coords.lat, coords.lng])
     .addTo(map)
-    .bindPopup(`<strong>Odontolog Villa Luro</strong><br>${clinicAddress}`);
+    .bindPopup(`<strong>odontologovillaluro</strong><br>${clinicAddress}`);
 }
 
 function initClinicCarousel() {
@@ -417,8 +417,8 @@ modalForms.forEach((form) => {
 
     const subject =
       formType === "turno"
-        ? "Solicitud de turno - Odontolog Villa Luro"
-        : "Consulta - Odontolog Villa Luro";
+        ? "Solicitud de turno - odontologovillaluro"
+        : "Consulta - odontologovillaluro";
 
     const bodyLines =
       formType === "turno"

@@ -467,6 +467,9 @@ button.button {
   }
 
   .treatment-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: fit-content;
     min-height: 40px;
     padding: 0 16px;
@@ -475,6 +478,7 @@ button.button {
     border-radius: 999px;
     font-size: 13px;
     font-weight: 800;
+    line-height: 1;
     box-shadow: 0 10px 20px rgba(23, 174, 185, 0.18);
   }
 
