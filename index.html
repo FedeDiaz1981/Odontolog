@@ -23,7 +23,7 @@
   >
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260731-1">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260805-1">
 </head>
 
 <body>
@@ -205,11 +205,14 @@
         <div class="doctor-spotlight-wrap" id="sobre-mi">
         <div class="doctor-spotlight-stack" aria-label="Sobre el doctor">
             <figure class="doctor-photo-stack">
-              <img
-                src="assets/img/Dr_02.png"
-                alt="Dr. Guido Santagada"
-                loading="lazy"
-              >
+              <picture>
+                <source media="(max-width: 1100px)" srcset="assets/img/Dr_02_mob.png">
+                <img
+                  src="assets/img/Dr_02.jpeg"
+                  alt="Dr. Guido Santagada"
+                  loading="lazy"
+                >
+              </picture>
             </figure>
 
             <div class="doctor-spotlight-copy-stack">
@@ -227,11 +230,14 @@
 
           <div class="doctor-spotlight-side" aria-label="Sobre el doctor">
             <figure class="doctor-photo-side">
-              <img
-                src="assets/img/Dr_02.png"
-                alt="Dr. Guido Santagada"
-                loading="lazy"
-              >
+              <picture>
+                <source media="(max-width: 1100px)" srcset="assets/img/Dr_02_mob.png">
+                <img
+                  src="assets/img/Dr_02.jpeg"
+                  alt="Dr. Guido Santagada"
+                  loading="lazy"
+                >
+              </picture>
             </figure>
 
             <div class="doctor-spotlight-copy-side">
@@ -730,6 +736,6 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
   ></script>
-  <script src="assets/js/main.js?v=20260731-1"></script>
+  <script src="assets/js/main.js?v=20260805-1"></script>
 </body>
 </html>
